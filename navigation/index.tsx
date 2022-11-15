@@ -5,6 +5,8 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import HomeScreen from "../src/screens/HomeScreen";
 import ProfileScreen from "../src/screens/ProfileScreen";
 import { RootStackParamList } from "./interface";
+import AddOrUpdatePasswordScreen from "../src/screens/AddPasswordScreen";
+import AddPasswordScreen from "../src/screens/AddPasswordScreen";
 const Stack = createStackNavigator<RootStackParamList>();
 const Navigation = () => {
   return (
@@ -21,6 +23,13 @@ const Navigation = () => {
           <Stack.Screen
             name="Profile"
             component={ProfileScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="Add_Password"
+            component={AddPasswordScreen}
             options={{
               headerShown: false,
             }}

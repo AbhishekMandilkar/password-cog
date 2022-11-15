@@ -1,4 +1,4 @@
 interface IAppTopBar {
-  title: string;
+  routeName: string;
   leftIcon?: JSX.Element;
 }

@@ -1,13 +1,17 @@
 import React from "react";
 import { Heading, HStack } from "native-base";
-import { SCREEN_WIDTH } from "../constants/Layout";
+import { SCREEN_WIDTH } from "../../constants/Layout";
 import { Feather } from "@expo/vector-icons";
-import Colors from "../../theme/Colors";
+import Colors from "../../../theme/Colors";
 import { useNavigation } from "@react-navigation/native";
+import { getTitleName } from "./AppTopBarHelper";
 
 const AppTopBar = (props: IAppTopBar) => {
   const navigation = useNavigation();
-  const { title, leftIcon } = props;
+  const { routeName, leftIcon } = props;
+
+  const title = getTitleName(routeName);
+
   return (
     <HStack p={SCREEN_WIDTH * 0.05} alignItems="center">
       {leftIcon ? (
