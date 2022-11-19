@@ -38,11 +38,19 @@ const Search = (props: ISearchProps) => {
           </PresenceTransition>
         )}
         <Input
+          placeholder="Search for passwords"
           ml={isSearching ? 2 : 0}
           mr={!isSearching ? 2 : 0}
           variant={"rounded"}
           flex={1}
-          h={12}
+          color={Colors.appText}
+          placeholderTextColor={Colors.appText}
+          backgroundColor={Colors.appForeground}
+          h={10}
+          focusOutlineColor={Colors.appForeground}
+          _focus={{
+            backgroundColor: "white",
+          }}
           onChangeText={(text) => handleQueryChange(text)}
           value={query}
         />

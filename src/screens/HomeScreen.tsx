@@ -3,7 +3,7 @@ import Container from "../common/Container";
 import HomeScreenView from "../components/HomeScreen/HomeScreenView";
 const HomeScreen = () => {
   return (
-    <Container>
+    <Container hideTopBar>
       <HomeScreenView />
     </Container>
   );

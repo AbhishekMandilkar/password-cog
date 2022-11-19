@@ -17,10 +17,7 @@ const HomeScreenView = () => {
       <Header />
       <Search handleQueryChange={handleQueryChange} query={query} />
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-        <ScrollView
-          background={"red.100"}
-          keyboardShouldPersistTaps="handled"
-        ></ScrollView>
+        <ScrollView keyboardShouldPersistTaps="handled"></ScrollView>
       </TouchableWithoutFeedback>
       <Fab
         renderInPortal={false}
