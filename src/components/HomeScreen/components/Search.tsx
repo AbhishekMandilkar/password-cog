@@ -43,13 +43,12 @@ const Search = (props: ISearchProps) => {
           mr={!isSearching ? 2 : 0}
           variant={"rounded"}
           flex={1}
-          color={Colors.appText}
-          placeholderTextColor={Colors.appText}
-          backgroundColor={Colors.appForeground}
-          h={10}
-          focusOutlineColor={Colors.appForeground}
+          size="2xl"
+          rounded={"lg"}
+          my={2}
+          focusOutlineColor={"transparent"}
           _focus={{
-            backgroundColor: "white",
+            backgroundColor: "gray.100",
           }}
           onChangeText={(text) => handleQueryChange(text)}
           value={query}

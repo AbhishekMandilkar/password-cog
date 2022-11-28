@@ -6,10 +6,15 @@ import Colors from "../../../theme/Colors";
 import { useNavigation } from "@react-navigation/native";
 import { getTitleName } from "./AppTopBarHelper";
 
+interface IAppTopBar {
+  routeName: string;
+  leftIcon?: JSX.Element;
+  rightIcon?: JSX.Element;
+}
+
 const AppTopBar = (props: IAppTopBar) => {
   const navigation = useNavigation();
-  const { routeName, leftIcon } = props;
-
+  const { routeName, leftIcon, rightIcon } = props;
   const title = getTitleName(routeName);
 
   return (
@@ -28,6 +33,7 @@ const AppTopBar = (props: IAppTopBar) => {
       <Heading fontSize="xl" color={Colors.appText} ml={5}>
         {title}
       </Heading>
+      {rightIcon && rightIcon}
     </HStack>
   );
 };

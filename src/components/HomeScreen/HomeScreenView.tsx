@@ -7,6 +7,8 @@ import Search from "./components/Search";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParamList } from "../../../navigation/interface";
+import ScreenView from "../../common/ScreenView";
+import { supabase } from "../../lib/supbase";
 type homeScreenProp = StackNavigationProp<RootStackParamList, "Home">;
 const HomeScreenView = () => {
   const [query, setQuery] = useState("");
@@ -14,9 +16,17 @@ const HomeScreenView = () => {
   const handleQueryChange = (text: string) => {
     setQuery(text);
   };
+  const getAllPasswords = async () => {
+    let { data: passwords, error } = await supabase
+      .from("paswords")
+      .select("*");
+    console.log("paswords", passwords);
+  };
+
+  getAllPasswords();
 
   return (
-    <>
+    <ScreenView hideTopBar>
       <Header />
       <Search handleQueryChange={handleQueryChange} query={query} />
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -32,7 +42,7 @@ const HomeScreenView = () => {
         icon={<Icon color="white" as={Feather} name="plus" size="4" />}
         label="Password"
       />
-    </>
+    </ScreenView>
   );
 };
 

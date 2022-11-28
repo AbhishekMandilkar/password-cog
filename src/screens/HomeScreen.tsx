@@ -1,12 +1,8 @@
 import React from "react";
-import Container from "../common/Container";
+import Container from "../common/ScreenView";
 import HomeScreenView from "../components/HomeScreen/HomeScreenView";
 const HomeScreen = () => {
-  return (
-    <Container hideTopBar>
-      <HomeScreenView />
-    </Container>
-  );
+  return <HomeScreenView />;
 };
 
 export default HomeScreen;

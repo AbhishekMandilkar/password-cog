@@ -6,13 +6,13 @@ import Colors from "../../theme/Colors";
 import { useRoute } from "@react-navigation/native";
 import AppTopBar from "./AppTopBar/AppTopBar";
 
-interface ContainerProps {
+interface ScreenViewProps {
   children: React.ReactNode;
   hideTopBar?: boolean;
   extraProps?: any;
 }
 
-const Container = ({ hideTopBar, children }: ContainerProps) => {
+const ScreenView = ({ hideTopBar, children }: ScreenViewProps) => {
   const route = useRoute();
   return (
     <SafeAreaView
@@ -23,11 +23,10 @@ const Container = ({ hideTopBar, children }: ContainerProps) => {
     >
       {!hideTopBar && <AppTopBar routeName={route.name} />}
       <Box flex={1} paddingX={SCREEN_WIDTH * 0.05}>
-        
         {children}
       </Box>
     </SafeAreaView>
   );
 };
 
-export default Container;
+export default ScreenView;

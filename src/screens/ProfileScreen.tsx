@@ -1,13 +1,9 @@
 import React from "react";
-import Container from "../common/Container";
+import Container from "../common/ScreenView";
 import ProfileScreenView from "../components/ProfileScreen/ProfileScreenView";
 
 const ProfileScreen = () => {
-  return (
-    <Container>
-      <ProfileScreenView />
-    </Container>
-  );
+  return <ProfileScreenView />;
 };
 
 export default ProfileScreen;

@@ -4,6 +4,7 @@ import Colors from "../../../theme/Colors";
 import ProfileActionButton from "./components/ProfileActionButtons";
 import { Feather } from "@expo/vector-icons";
 import { IFeatherIcon } from "../../interface";
+import Screen from "../../common/ScreenView";
 
 interface ProfileScreenActionsProps {
   action: () => void;
@@ -35,7 +36,7 @@ const ProfileScreenView = () => {
     },
   ];
   return (
-    <>
+    <Screen>
       <VStack alignItems="center">
         <Avatar
           my={10}
@@ -59,7 +60,7 @@ const ProfileScreenView = () => {
           ))}
         </VStack>
       </VStack>
-    </>
+    </Screen>
   );
 };
 
